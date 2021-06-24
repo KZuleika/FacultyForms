@@ -30,7 +30,8 @@ namespace Faculty
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MostrarAlumnosForm form = new MostrarAlumnosForm();
+            form.ShowDialog();
         }
     }
 }
