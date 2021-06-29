@@ -48,7 +48,7 @@ namespace Faculty
             this.Nombre,
             this.Creditos});
             this.dgvMostrarMaterias.Location = new System.Drawing.Point(16, 21);
-            this.dgvMostrarMaterias.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dgvMostrarMaterias.Margin = new System.Windows.Forms.Padding(5);
             this.dgvMostrarMaterias.Name = "dgvMostrarMaterias";
             this.dgvMostrarMaterias.RowHeadersWidth = 51;
             this.dgvMostrarMaterias.RowTemplate.Height = 24;
@@ -88,8 +88,9 @@ namespace Faculty
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Location = new System.Drawing.Point(485, 355);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(139, 44);
             this.btnCerrar.TabIndex = 3;
@@ -101,11 +102,13 @@ namespace Faculty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(642, 413);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.dgvMostrarMaterias);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "MostrarMateriasForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MostrarMateriasForm";
