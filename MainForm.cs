@@ -7,30 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SQLiteDb;
+
 
 namespace Faculty
 {
     public partial class MainForm : Form
     {
-        public SQLiteConn conn;
+        private ControlEscolar controlEscolar;
 
         public MainForm()
         {
             InitializeComponent();
-            conn = new SQLiteConn("faculty.db",true);
-            // accesos...
-            conn.Close();
+            controlEscolar = new ControlEscolar();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            controlEscolar.Close();
             Close();
         }
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MostrarAlumnosForm form = new MostrarAlumnosForm();
+            MostrarAlumnosForm form = new MostrarAlumnosForm(controlEscolar);
             form.ShowDialog();
         }
     }

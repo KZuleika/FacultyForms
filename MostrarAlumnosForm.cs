@@ -12,9 +12,21 @@ namespace Faculty
 {
     public partial class MostrarAlumnosForm : Form
     {
-        public MostrarAlumnosForm()
+        private ControlEscolar controlEscolar;
+        public MostrarAlumnosForm(ControlEscolar controlEscolar)
         {
             InitializeComponent();
+            this.controlEscolar = controlEscolar;
+        }
+
+        private void MostrarAlumnosForm_Load(object sender, EventArgs e)
+        {
+            dgvMostrarAlumnos.DataSource = controlEscolar.GetAlumnos();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
