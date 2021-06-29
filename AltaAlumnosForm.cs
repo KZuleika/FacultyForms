@@ -18,5 +18,10 @@ namespace Faculty
             InitializeComponent();
             this.controlEscolar = controlEscolar;
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
