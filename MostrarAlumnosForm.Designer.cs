@@ -40,10 +40,10 @@ namespace Faculty
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Location = new System.Drawing.Point(508, 362);
+            this.btnCerrar.Location = new System.Drawing.Point(507, 362);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(116, 37);
+            this.btnCerrar.Size = new System.Drawing.Size(116, 38);
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -62,7 +62,7 @@ namespace Faculty
             this.dgvMostrarAlumnos.Name = "dgvMostrarAlumnos";
             this.dgvMostrarAlumnos.RowHeadersWidth = 51;
             this.dgvMostrarAlumnos.RowTemplate.Height = 24;
-            this.dgvMostrarAlumnos.Size = new System.Drawing.Size(606, 335);
+            this.dgvMostrarAlumnos.Size = new System.Drawing.Size(605, 335);
             this.dgvMostrarAlumnos.TabIndex = 1;
             // 
             // Matricula
@@ -90,7 +90,7 @@ namespace Faculty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 412);
+            this.ClientSize = new System.Drawing.Size(642, 413);
             this.Controls.Add(this.dgvMostrarAlumnos);
             this.Controls.Add(this.btnCerrar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -22,6 +22,11 @@ namespace Faculty
             return conn.GetAlumnos();
         }
 
+        public List<Materia> GetMaterias()
+        {
+            return conn.GetMaterias();
+        }
+
         public void Close()
         {
             conn.Close();

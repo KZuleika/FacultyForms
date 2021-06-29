@@ -32,5 +32,11 @@ namespace Faculty
             MostrarAlumnosForm form = new MostrarAlumnosForm(controlEscolar);
             form.ShowDialog();
         }
+
+        private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MostrarMateriasForm form = new MostrarMateriasForm(controlEscolar);
+            form.ShowDialog();
+        }
     }
 }

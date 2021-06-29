@@ -19,6 +19,20 @@ namespace SQLiteDb
         }
     }
 
+    public class Materia
+    {
+        public int Clave { get; }
+        public string Nombre { get; }
+        public int Creditos { get; }
+
+        public Materia(int clave, string nombre, int creditos)
+        {
+            Clave = clave;
+            Nombre = nombre;
+            Creditos = creditos;
+        }
+    }
+
     public partial class SQLiteConn
     {
         public List<Alumno> GetAlumnos()
@@ -36,9 +50,29 @@ namespace SQLiteDb
                                            rs.GetString("nombre_completo")));
                 }
             }
-
-
+            
             return alumnos;
+        }
+
+        public List<Materia> GetMaterias()
+        {
+            List<Materia> materias = new List<Materia>();
+            
+            string sql = "SELECT clave, materia, creditos"
+                + " FROM materias"
+                + " ORDER BY clave;";
+
+            using (SQLiteRecordSet rs = ExecuteQuery(sql))
+            {
+                while (rs.NextRecord())
+                {
+                    materias.Add(new Materia(rs.GetInt32("clave"),
+                                           rs.GetString("materia"),
+                                           rs.GetInt32("creditos")));
+                }
+            }
+
+            return materias;
         }
     }
 }
