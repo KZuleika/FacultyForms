@@ -30,39 +30,30 @@ namespace Faculty
         private void InitializeComponent()
         {
             this.dgvMostrarMaterias = new System.Windows.Forms.DataGridView();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Creditos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarMaterias)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvMostrarMaterias
             // 
-            this.dgvMostrarMaterias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvMostrarMaterias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMostrarMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMostrarMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Clave,
             this.Nombre,
             this.Creditos});
-            this.dgvMostrarMaterias.Location = new System.Drawing.Point(13, 17);
-            this.dgvMostrarMaterias.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvMostrarMaterias.Location = new System.Drawing.Point(16, 21);
+            this.dgvMostrarMaterias.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.dgvMostrarMaterias.Name = "dgvMostrarMaterias";
             this.dgvMostrarMaterias.RowHeadersWidth = 51;
             this.dgvMostrarMaterias.RowTemplate.Height = 24;
-            this.dgvMostrarMaterias.Size = new System.Drawing.Size(616, 336);
+            this.dgvMostrarMaterias.Size = new System.Drawing.Size(610, 325);
             this.dgvMostrarMaterias.TabIndex = 2;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Location = new System.Drawing.Point(518, 366);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(111, 35);
-            this.btnCerrar.TabIndex = 3;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // Clave
             // 
@@ -94,13 +85,27 @@ namespace Faculty
             this.Creditos.ReadOnly = true;
             this.Creditos.Width = 125;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Location = new System.Drawing.Point(485, 355);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(139, 44);
+            this.btnCerrar.TabIndex = 3;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // MostrarMateriasForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 413);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.dgvMostrarMaterias);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MostrarMateriasForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MostrarMateriasForm";

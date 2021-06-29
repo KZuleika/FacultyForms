@@ -55,7 +55,7 @@ namespace Faculty
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(731, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -102,6 +102,7 @@ namespace Faculty
             this.altaDeAlumnoToolStripMenuItem.Name = "altaDeAlumnoToolStripMenuItem";
             this.altaDeAlumnoToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
             this.altaDeAlumnoToolStripMenuItem.Text = "Alta de alumno";
+            this.altaDeAlumnoToolStripMenuItem.Click += new System.EventHandler(this.altaDeAlumnoToolStripMenuItem_Click);
             // 
             // altaDeToolStripMenuItem
             // 
@@ -127,14 +128,14 @@ namespace Faculty
             // 
             this.acercaDeToolStripMenuItem.Enabled = false;
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.acercaDeToolStripMenuItem.Text = "Acerca de...";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 478);
+            this.ClientSize = new System.Drawing.Size(784, 484);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;

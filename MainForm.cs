@@ -38,5 +38,11 @@ namespace Faculty
             MostrarMateriasForm form = new MostrarMateriasForm(controlEscolar);
             form.ShowDialog();
         }
+
+        private void altaDeAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AltaAlumnosForm form = new AltaAlumnosForm(controlEscolar);
+            form.ShowDialog();
+        }
     }
 }
