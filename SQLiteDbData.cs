@@ -38,7 +38,7 @@ namespace SQLiteDb
         public List<Alumno> GetAlumnos()
         {
             List<Alumno> alumnos = new List<Alumno>();
-            string sql = "SELECT matricula, apellido   || ',' || nombre AS nombre_completo"
+            string sql = "SELECT matricula, apellido   || ', ' || nombre AS nombre_completo"
                 + " FROM alumnos"
                 + " ORDER BY  matricula;";
 
@@ -73,6 +73,38 @@ namespace SQLiteDb
             }
 
             return materias;
+        }
+
+        public bool ValidarAlumno(int matricula)
+        {
+            string sql = $"SELECT * FROM alumnos WHERE matricula = {matricula};";
+            
+            using (SQLiteRecordSet rs = ExecuteQuery(sql))
+            {
+                return !rs.NextRecord();
+            }
+        }
+
+        public void AltaAlumno(int matricula, string apellido, string nombre)
+        {
+            string sql = $" INSERT INTO alumnos (matricula, nombre, apellido)"
+                        + $" VALUES({matricula}, '{nombre}', '{apellido}');";
+            ExecuteNonQuery(sql);
+
+            sql = "SELECT clave FROM materias ORDER BY clave; ";
+            List<int> claves = new List<int>();
+
+            using (SQLiteRecordSet rs = ExecuteQuery(sql))
+            {
+                while (rs.NextRecord())
+                {
+                    claves.Add(rs.GetInt32("clave"));
+                }
+            }
+            claves.ForEach(c => {
+                sql = $"INSERT INTO calificaciones (matricula, clave, calificacion) VALUES ({matricula}, {c}, -1);";
+                ExecuteNonQuery(sql);
+            });
         }
     }
 }

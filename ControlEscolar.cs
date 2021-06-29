@@ -31,5 +31,15 @@ namespace Faculty
         {
             conn.Close();
         }
+
+        public bool AltaAlumno(int matricula, string apellido, string nombre)
+        {
+            if (!conn.ValidarAlumno(matricula)) return false;
+            else
+            {
+                conn.AltaAlumno(matricula, apellido, nombre);
+            }
+            return true;
+        }
     }
 }

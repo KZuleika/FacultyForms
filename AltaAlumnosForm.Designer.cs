@@ -133,6 +133,7 @@ namespace Faculty
             this.tbMatricula.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbMatricula.Location = new System.Drawing.Point(147, 116);
+            this.tbMatricula.MaxLength = 10;
             this.tbMatricula.Name = "tbMatricula";
             this.tbMatricula.Size = new System.Drawing.Size(466, 27);
             this.tbMatricula.TabIndex = 2;
