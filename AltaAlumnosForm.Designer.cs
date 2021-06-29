@@ -78,7 +78,7 @@ namespace Faculty
             this.tbNombre.Location = new System.Drawing.Point(147, 201);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(466, 27);
-            this.tbNombre.TabIndex = 2;
+            this.tbNombre.TabIndex = 3;
             // 
             // label3
             // 
@@ -110,7 +110,7 @@ namespace Faculty
             this.btnCancelar.Location = new System.Drawing.Point(489, 264);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(124, 38);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -136,7 +136,7 @@ namespace Faculty
             this.tbMatricula.MaxLength = 10;
             this.tbMatricula.Name = "tbMatricula";
             this.tbMatricula.Size = new System.Drawing.Size(466, 27);
-            this.tbMatricula.TabIndex = 2;
+            this.tbMatricula.TabIndex = 1;
             // 
             // AltaAlumnosForm
             // 
