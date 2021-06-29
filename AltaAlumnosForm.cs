@@ -42,7 +42,7 @@ namespace Faculty
 
             if (tbMatricula.Text.Trim().Length < 1 || tbApellido.Text.Trim().Length < 1 || tbNombre.Text.Trim().Length < 1) {
                 switch (MessageBox.Show("Campo(s) vacio(s).\nRellene todos campos.",
-                                 "Campo vacio",
+                                 "Campo(s) vacio(s)",
                                  MessageBoxButtons.RetryCancel,
                                  MessageBoxIcon.Error))
                 {
