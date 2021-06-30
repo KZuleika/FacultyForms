@@ -34,7 +34,20 @@ namespace SQLiteDb
         }
     }
 
+    public class AlumnoPromedio
+    {
+        public int Matricula { get; }
+        public string NombreCompleto { get; }
+        public double Promedio { get; }
+        public string NombreCompletoMatricula => $"{NombreCompleto} - {Matricula}";
 
+        public AlumnoPromedio(int matricula, string nombreCompleto, double promedio)
+        {
+            Matricula = matricula;
+            NombreCompleto = nombreCompleto;
+            Promedio = promedio;
+        }
+    }
     public partial class SQLiteConn
     {
         public List<Alumno> GetAlumnos()
@@ -157,5 +170,26 @@ namespace SQLiteDb
                         + $" WHERE matricula = {matricula} AND clave = {clave};";
             ExecuteNonQuery(sql);
         }
+
+        public List<AlumnoPromedio> GetAlumnosPromedioTotal()
+        {
+            List<AlumnoPromedio> alumnos = new List<AlumnoPromedio>();
+            string sql = "SELECT a.apellido || ', ' ||a.nombre AS nombre_completo, a.matricula,  avg(c.calificacion) AS promedio_total"
+                        + " FROM alumnos a"
+                        + " INNER JOIN calificaciones c ON(a.matricula = c.matricula)"
+                        + " WHERE c.calificacion > -1"
+                        + " GROUP BY a.matricula"
+                        + " ORDER BY a.apellido, a.nombre, a.matricula; ";
+            using (SQLiteRecordSet rs = ExecuteQuery(sql))
+            {
+                while (rs.NextRecord())
+                {
+                    alumnos.Add(new AlumnoPromedio(rs.GetInt32("matricula"),
+                                           rs.GetString("nombre_completo"), rs.GetDouble("promedio_total")));
+                }
+            }
+            return alumnos;
+        }
+
     }
 }
