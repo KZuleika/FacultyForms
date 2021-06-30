@@ -42,6 +42,11 @@ namespace Faculty
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.promedioTotalDeAlumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.promedioParcialDeAlumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.alumnosConMateriasReprobadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.extraordinariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -117,6 +122,12 @@ namespace Faculty
             // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.promedioTotalDeAlumnosToolStripMenuItem,
+            this.promedioParcialDeAlumnosToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.alumnosConMateriasReprobadasToolStripMenuItem,
+            this.extraordinariosToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -146,6 +157,35 @@ namespace Faculty
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // promedioTotalDeAlumnosToolStripMenuItem
+            // 
+            this.promedioTotalDeAlumnosToolStripMenuItem.Name = "promedioTotalDeAlumnosToolStripMenuItem";
+            this.promedioTotalDeAlumnosToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
+            this.promedioTotalDeAlumnosToolStripMenuItem.Text = "Promedio total de alumnos";
+            // 
+            // promedioParcialDeAlumnosToolStripMenuItem
+            // 
+            this.promedioParcialDeAlumnosToolStripMenuItem.Name = "promedioParcialDeAlumnosToolStripMenuItem";
+            this.promedioParcialDeAlumnosToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
+            this.promedioParcialDeAlumnosToolStripMenuItem.Text = "Promedio parcial de alumnos";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(316, 6);
+            // 
+            // alumnosConMateriasReprobadasToolStripMenuItem
+            // 
+            this.alumnosConMateriasReprobadasToolStripMenuItem.Name = "alumnosConMateriasReprobadasToolStripMenuItem";
+            this.alumnosConMateriasReprobadasToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
+            this.alumnosConMateriasReprobadasToolStripMenuItem.Text = "Alumnos con materias reprobadas";
+            // 
+            // extraordinariosToolStripMenuItem
+            // 
+            this.extraordinariosToolStripMenuItem.Name = "extraordinariosToolStripMenuItem";
+            this.extraordinariosToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
+            this.extraordinariosToolStripMenuItem.Text = "Extraordinarios";
             // 
             // MainForm
             // 
@@ -184,6 +224,11 @@ namespace Faculty
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem promedioTotalDeAlumnosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem promedioParcialDeAlumnosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem alumnosConMateriasReprobadasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem extraordinariosToolStripMenuItem;
     }
 }
 
