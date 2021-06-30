@@ -111,6 +111,9 @@
     <EmbeddedResource Include="AltaAlumnosForm.resx">
       <DependentUpon>AltaAlumnosForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AlumnosMateriasReprobadasForm.resx">
+      <DependentUpon>AlumnosMateriasReprobadasForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AsignarCalificacionesForm.resx">
       <DependentUpon>AsignarCalificacionesForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -64,5 +64,14 @@ namespace Faculty
         {
             return conn.GetAlumnosPromedioParcial();
         }
+
+        public List<Alumno> GetAlumnosReprobados()
+        {
+            return conn.GetAlumnosReprobados();
+        }
+        public List<string> GetMateriasReprobadasPorAlumno(int matricula)
+        {
+            return conn.GetMateriasReprobadasPorAlumno(matricula);
+        }
     }
 }

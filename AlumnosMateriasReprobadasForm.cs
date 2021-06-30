@@ -17,6 +17,22 @@ namespace Faculty
         {
             InitializeComponent();
             this.controlEscolar = controlEscolar;
+
+            cmbAlumnos.DisplayMember = "NombreCompletoMatricula";
+            cmbAlumnos.ValueMember = "Matricula";
+            cmbAlumnos.DataSource = controlEscolar.GetAlumnosReprobados();
+        }
+
+        private void AlumnosMateriasReprobadasForm_Load(object sender, EventArgs e)
+        {
+            int matricula = (int)cmbAlumnos.SelectedValue;
+            lstMaterias.DataSource = controlEscolar.GetMateriasReprobadasPorAlumno(matricula);
+        }
+
+        private void cmbAlumnos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int matricula = (int)cmbAlumnos.SelectedValue;
+            lstMaterias.DataSource = controlEscolar.GetMateriasReprobadasPorAlumno(matricula);
         }
     }
 }

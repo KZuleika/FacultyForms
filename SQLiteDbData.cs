@@ -209,6 +209,45 @@ namespace SQLiteDb
             }
             return alumnos;
         }
+        public List<Alumno> GetAlumnosReprobados()
+        {
+            List<Alumno> alumnos = new List<Alumno>();
+            string sql = "SELECT a.apellido || ', ' || a.nombre AS nombre_completo, a.matricula"
+                        + " FROM calificaciones c"
+                        + " INNER JOIN alumnos a on a.matricula = c.matricula"
+                        + " WHERE c.calificacion < 70 AND c.calificacion > -1"
+                        + " GROUP BY a.matricula"
+                        + " ORDER BY a.apellido, a.nombre, a.matricula; ";
 
+            using (SQLiteRecordSet rs = ExecuteQuery(sql))
+            {
+                while (rs.NextRecord())
+                {
+                    alumnos.Add(new Alumno(rs.GetInt32("matricula"),
+                                           rs.GetString("nombre_completo")));
+                }
+            }
+
+            return alumnos;
+        }
+
+        public List<string> GetMateriasReprobadasPorAlumno(int matricula)
+        {
+            List<string> materias = new List<string>();
+            string sql = " SELECT m.materia AS materias_reprobadas"
+                        + " FROM calificaciones c"
+                        + " INNER JOIN materias m ON(m.clave = c.clave)"
+                        + $" WHERE c.matricula = {matricula} AND c.calificacion < 70 AND c.calificacion > -1"
+                        + " ORDER BY m.materia; ";
+
+            using (SQLiteRecordSet rs = ExecuteQuery(sql))
+            {
+                while (rs.NextRecord())
+                {
+                    materias.Add(rs.GetString("materias_reprobadas"));
+                }
+            }
+            return materias;
+        }
     }
 }
