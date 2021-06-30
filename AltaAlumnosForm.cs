@@ -85,5 +85,13 @@ namespace Faculty
                                  MessageBoxButtons.OK,
                                  MessageBoxIcon.Information);
         }
+
+        private void tbMatricula_TextChanged(object sender, EventArgs e)
+        {
+            if (tbMatricula.Text.Trim().Length > 0) btnGuardar.Enabled = true;
+            else btnGuardar.Enabled = false;
+
+
+        }
     }
 }
