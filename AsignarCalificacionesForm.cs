@@ -6,6 +6,8 @@ namespace Faculty
     public partial class AsignarCalificacionesForm : Form
     {
         private ControlEscolar controlEscolar;
+        private int claveMat;
+        private int nuevaC;
         public AsignarCalificacionesForm(ControlEscolar controlEscolar)
         {
             InitializeComponent();
@@ -33,6 +35,7 @@ namespace Faculty
             int matricula = (int) cmbAlumnos.SelectedValue;
             lstMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno(matricula);
             tbAnteriorC.Text = $"{lstMaterias.SelectedItem}";
+            dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int)cmbAlumnos.SelectedValue);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -61,6 +64,25 @@ namespace Faculty
         private void nupNuevaC_ValueChanged(object sender, EventArgs e)
         {
             btnActualizar.Enabled = true;
+        }
+
+        private void AsignarCalificacionesForm_Load(object sender, EventArgs e)
+        {
+            dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int) cmbAlumnos.SelectedValue);
+        }
+
+        private void dgvMaterias_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgvMaterias.SelectedRows.Count > 0)
+                nuevaC = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString());
+            //tbAnteriorC.Text = nuevaC.ToString();
+        }
+
+        private void dgvMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvMaterias.SelectedRows.Count > 0)
+                claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
+            //tbAnteriorC.Text = claveMat.ToString();
         }
 
         //private void dgvMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
