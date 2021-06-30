@@ -55,5 +55,10 @@ namespace Faculty
         {
             conn.AsignarCalificacion(matricula, clave, calificacion);
         }
+
+        public List<AlumnoPromedio> GetAlumnosPromedioTotal()
+        {
+            return conn.GetAlumnosPromedioTotal();
+        }
     }
 }
