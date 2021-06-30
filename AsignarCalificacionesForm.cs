@@ -36,10 +36,13 @@ namespace Faculty
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            controlEscolar.AsignarCalificacion((int)cmbAlumnos.SelectedValue, (int) lstMaterias.SelectedValue, (int) nupNuevaC.Value);
-            lstMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int)cmbAlumnos.SelectedValue);
+            int matricula = (int)cmbAlumnos.SelectedValue;
+            int clave = (int)lstMaterias.SelectedValue;
+            int calificacion = (int)nupNuevaC.Value;
+            controlEscolar.AsignarCalificacion(matricula, clave, calificacion);
+            lstMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno(matricula);
 
-            MessageBox.Show($"Se ha actualizado la calificación del alumno {cmbAlumnos.SelectedValue} en {lstMaterias.SelectedValue} a {nupNuevaC.Value}",
+            MessageBox.Show($"Se ha actualizado la calificación del alumno {matricula} en {clave} a {calificacion}",
                                  "Calificación asignada",
                                  MessageBoxButtons.OK,
                                  MessageBoxIcon.Information);
