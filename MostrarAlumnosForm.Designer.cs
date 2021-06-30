@@ -63,6 +63,7 @@ namespace Faculty
             this.dgvMostrarAlumnos.Name = "dgvMostrarAlumnos";
             this.dgvMostrarAlumnos.RowHeadersWidth = 51;
             this.dgvMostrarAlumnos.RowTemplate.Height = 24;
+            this.dgvMostrarAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMostrarAlumnos.Size = new System.Drawing.Size(605, 335);
             this.dgvMostrarAlumnos.TabIndex = 1;
             // 
@@ -89,7 +90,7 @@ namespace Faculty
             // 
             // MostrarAlumnosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(642, 413);

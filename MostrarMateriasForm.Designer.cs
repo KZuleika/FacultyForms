@@ -52,6 +52,7 @@ namespace Faculty
             this.dgvMostrarMaterias.Name = "dgvMostrarMaterias";
             this.dgvMostrarMaterias.RowHeadersWidth = 51;
             this.dgvMostrarMaterias.RowTemplate.Height = 24;
+            this.dgvMostrarMaterias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMostrarMaterias.Size = new System.Drawing.Size(610, 325);
             this.dgvMostrarMaterias.TabIndex = 2;
             // 
