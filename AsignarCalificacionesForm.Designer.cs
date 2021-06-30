@@ -31,7 +31,6 @@ namespace Faculty
         {
             this.cmbAlumnos = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dgvMostrarMaterias = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbNuevaC = new System.Windows.Forms.TextBox();
@@ -40,10 +39,11 @@ namespace Faculty
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.dgvMaterias = new System.Windows.Forms.DataGridView();
             this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarMaterias)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbAlumnos
@@ -69,22 +69,6 @@ namespace Faculty
             this.label4.Size = new System.Drawing.Size(310, 38);
             this.label4.TabIndex = 6;
             this.label4.Text = "Asignar calificación";
-            // 
-            // dgvMostrarMaterias
-            // 
-            this.dgvMostrarMaterias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMostrarMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMostrarMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Clave,
-            this.Nombre});
-            this.dgvMostrarMaterias.Location = new System.Drawing.Point(26, 178);
-            this.dgvMostrarMaterias.Margin = new System.Windows.Forms.Padding(5);
-            this.dgvMostrarMaterias.Name = "dgvMostrarMaterias";
-            this.dgvMostrarMaterias.RowHeadersWidth = 51;
-            this.dgvMostrarMaterias.RowTemplate.Height = 24;
-            this.dgvMostrarMaterias.Size = new System.Drawing.Size(563, 302);
-            this.dgvMostrarMaterias.TabIndex = 7;
             // 
             // label1
             // 
@@ -165,16 +149,31 @@ namespace Faculty
             this.label3.TabIndex = 11;
             this.label3.Text = "Alumno";
             // 
+            // dgvMaterias
+            // 
+            this.dgvMaterias.AllowUserToAddRows = false;
+            this.dgvMaterias.AllowUserToDeleteRows = false;
+            this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Clave,
+            this.Nombre});
+            this.dgvMaterias.Location = new System.Drawing.Point(26, 178);
+            this.dgvMaterias.MultiSelect = false;
+            this.dgvMaterias.Name = "dgvMaterias";
+            this.dgvMaterias.ReadOnly = true;
+            this.dgvMaterias.RowHeadersWidth = 51;
+            this.dgvMaterias.RowTemplate.Height = 24;
+            this.dgvMaterias.Size = new System.Drawing.Size(566, 302);
+            this.dgvMaterias.TabIndex = 12;
+            this.dgvMaterias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterias_CellContentClick);
+            // 
             // Clave
             // 
             this.Clave.DataPropertyName = "Clave";
-            this.Clave.DividerWidth = 1;
-            this.Clave.Frozen = true;
             this.Clave.HeaderText = "Clave";
-            this.Clave.MinimumWidth = 100;
+            this.Clave.MinimumWidth = 85;
             this.Clave.Name = "Clave";
             this.Clave.ReadOnly = true;
-            this.Clave.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Clave.Width = 125;
             // 
             // Nombre
@@ -193,20 +192,20 @@ namespace Faculty
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(846, 507);
+            this.Controls.Add(this.dgvMaterias);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgvMostrarMaterias);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbAlumnos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AsignarCalificacionesForm";
             this.Text = "AsignarCalificacionesForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarMaterias)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,7 +215,6 @@ namespace Faculty
 
         private System.Windows.Forms.ComboBox cmbAlumnos;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dgvMostrarMaterias;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbNuevaC;
@@ -225,6 +223,7 @@ namespace Faculty
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dgvMaterias;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }

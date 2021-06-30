@@ -30,8 +30,14 @@ namespace Faculty
 
         private void cbAlumnos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int matricula = 2851;
-            dgvMostrarMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno(matricula);
+            int matricula = (int) cmbAlumnos.SelectedValue;
+            dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno(matricula);
+            
+        }
+
+        private void dgvMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
