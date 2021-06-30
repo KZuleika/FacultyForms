@@ -50,5 +50,29 @@ namespace Faculty
             AsignarCalificacionesForm form = new AsignarCalificacionesForm(controlEscolar);
             form.ShowDialog();
         }
+
+        private void promedioTotalDeAlumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new PromedioTotalForm(controlEscolar);
+            form.ShowDialog();
+        }
+
+        private void promedioParcialDeAlumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PromedioParcialForm form = new PromedioParcialForm(controlEscolar);
+            form.ShowDialog();
+        }
+
+        private void alumnosConMateriasReprobadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AlumnosMateriasReprobadasForm form = new AlumnosMateriasReprobadasForm(controlEscolar);
+            form.ShowDialog();
+        }
+
+        private void extraordinariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExtraordinariosForm form = new ExtraordinariosForm(controlEscolar);
+            form.ShowDialog();
+        }
     }
 }

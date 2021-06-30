@@ -55,6 +55,12 @@
     <Compile Include="AltaAlumnosForm.Designer.cs">
       <DependentUpon>AltaAlumnosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AlumnosMateriasReprobadasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlumnosMateriasReprobadasForm.Designer.cs">
+      <DependentUpon>AlumnosMateriasReprobadasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AsignarCalificacionesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,12 @@
       <DependentUpon>AsignarCalificacionesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlEscolar.cs" />
+    <Compile Include="ExtraordinariosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtraordinariosForm.Designer.cs">
+      <DependentUpon>ExtraordinariosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +93,18 @@
       <DependentUpon>MostrarMateriasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="PromedioParcialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PromedioParcialForm.Designer.cs">
+      <DependentUpon>PromedioParcialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PromedioTotalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PromedioTotalForm.Designer.cs">
+      <DependentUpon>PromedioTotalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLiteDb.cs" />
     <Compile Include="SQLiteDbData.cs" />
@@ -98,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MostrarMateriasForm.resx">
       <DependentUpon>MostrarMateriasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromedioTotalForm.resx">
+      <DependentUpon>PromedioTotalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

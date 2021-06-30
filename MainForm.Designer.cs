@@ -163,12 +163,14 @@ namespace Faculty
             this.promedioTotalDeAlumnosToolStripMenuItem.Name = "promedioTotalDeAlumnosToolStripMenuItem";
             this.promedioTotalDeAlumnosToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
             this.promedioTotalDeAlumnosToolStripMenuItem.Text = "Promedio total de alumnos";
+            this.promedioTotalDeAlumnosToolStripMenuItem.Click += new System.EventHandler(this.promedioTotalDeAlumnosToolStripMenuItem_Click);
             // 
             // promedioParcialDeAlumnosToolStripMenuItem
             // 
             this.promedioParcialDeAlumnosToolStripMenuItem.Name = "promedioParcialDeAlumnosToolStripMenuItem";
             this.promedioParcialDeAlumnosToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
             this.promedioParcialDeAlumnosToolStripMenuItem.Text = "Promedio parcial de alumnos";
+            this.promedioParcialDeAlumnosToolStripMenuItem.Click += new System.EventHandler(this.promedioParcialDeAlumnosToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -180,12 +182,14 @@ namespace Faculty
             this.alumnosConMateriasReprobadasToolStripMenuItem.Name = "alumnosConMateriasReprobadasToolStripMenuItem";
             this.alumnosConMateriasReprobadasToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
             this.alumnosConMateriasReprobadasToolStripMenuItem.Text = "Alumnos con materias reprobadas";
+            this.alumnosConMateriasReprobadasToolStripMenuItem.Click += new System.EventHandler(this.alumnosConMateriasReprobadasToolStripMenuItem_Click);
             // 
             // extraordinariosToolStripMenuItem
             // 
             this.extraordinariosToolStripMenuItem.Name = "extraordinariosToolStripMenuItem";
             this.extraordinariosToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
             this.extraordinariosToolStripMenuItem.Text = "Extraordinarios";
+            this.extraordinariosToolStripMenuItem.Click += new System.EventHandler(this.extraordinariosToolStripMenuItem_Click);
             // 
             // MainForm
             // 
