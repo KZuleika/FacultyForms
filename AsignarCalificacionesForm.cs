@@ -12,9 +12,26 @@ namespace Faculty
 {
     public partial class AsignarCalificacionesForm : Form
     {
-        public AsignarCalificacionesForm()
+        private ControlEscolar controlEscolar;
+        public AsignarCalificacionesForm(ControlEscolar controlEscolar)
         {
             InitializeComponent();
+            this.controlEscolar = controlEscolar;
+
+            cmbAlumnos.DisplayMember = "NombreCompleto";
+            cmbAlumnos.ValueMember = "Matricula";
+            cmbAlumnos.DataSource = controlEscolar.GetAlumnos(true);
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void cbAlumnos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int matricula = 2851;
+            dgvMostrarMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno(matricula);
         }
     }
 }

@@ -47,7 +47,7 @@ namespace Faculty
 
         private void altaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AsignarCalificacionesForm form = new AsignarCalificacionesForm();
+            AsignarCalificacionesForm form = new AsignarCalificacionesForm(controlEscolar);
             form.ShowDialog();
         }
     }

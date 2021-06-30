@@ -22,9 +22,19 @@ namespace Faculty
             return conn.GetAlumnos();
         }
 
+        public List<Alumno> GetAlumnos(bool alfabetico)
+        {   if(!alfabetico) return conn.GetAlumnos();
+            return conn.GetAlumnosAlf();
+        }
+
         public List<Materia> GetMaterias()
         {
             return conn.GetMaterias();
+        }
+
+        public List<Materia> MateriasActualizablesPorAlumno(int matricula)
+        {
+            return conn.MateriasActualizablesPorAlumno(matricula);
         }
 
         public void Close()

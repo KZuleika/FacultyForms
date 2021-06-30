@@ -33,6 +33,7 @@ namespace SQLiteDb
         }
     }
 
+
     public partial class SQLiteConn
     {
         public List<Alumno> GetAlumnos()
@@ -51,6 +52,25 @@ namespace SQLiteDb
                 }
             }
             
+            return alumnos;
+        }
+
+        public List<Alumno> GetAlumnosAlf()
+        {
+            List<Alumno> alumnos = new List<Alumno>();
+            string sql = "SELECT matricula, apellido   || ', ' || nombre AS nombre_completo"
+                + " FROM alumnos"
+                + " ORDER BY  apellido, nombre, matricula;";
+
+            using (SQLiteRecordSet rs = ExecuteQuery(sql))
+            {
+                while (rs.NextRecord())
+                {
+                    alumnos.Add(new Alumno(rs.GetInt32("matricula"),
+                                           rs.GetString("nombre_completo")));
+                }
+            }
+
             return alumnos;
         }
 
@@ -105,6 +125,29 @@ namespace SQLiteDb
                 sql = $"INSERT INTO calificaciones (matricula, clave, calificacion) VALUES ({matricula}, {c}, -1);";
                 ExecuteNonQuery(sql);
             });
+        }
+
+        public List<Materia> MateriasActualizablesPorAlumno(int matricula)
+        {
+            List<Materia> materias = new List<Materia>();
+
+            string sql = "SELECT m.clave as clave, m.materia as materia, c.calificacion as calificacion"
+                        + " FROM calificaciones c"
+                        + " CROSS JOIN materias m on m.clave = c.clave"
+                        + $" WHERE c.matricula = {matricula} AND c.calificacion < 70"
+                        + " ORDER BY m.materia; ";
+
+            using (SQLiteRecordSet rs = ExecuteQuery(sql))
+            {
+                while (rs.NextRecord())
+                {
+                    materias.Add(new Materia(rs.GetInt32("clave"),
+                                           rs.GetString("materia"),
+                                           rs.GetInt32("calificacion")));
+                }
+            }
+
+            return materias;
         }
     }
 }
