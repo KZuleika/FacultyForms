@@ -12,6 +12,7 @@ namespace SQLiteDb
         public int Matricula { get; }
         public string NombreCompleto { get; }
 
+        public string NombreCompletoMatricula => $"{NombreCompleto} - {Matricula}";
         public Alumno(int matricula, string nombreCompleto)
         {
             Matricula = matricula;
