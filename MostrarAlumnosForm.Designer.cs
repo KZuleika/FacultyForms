@@ -89,7 +89,7 @@ namespace Faculty
             // 
             // MostrarAlumnosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(642, 413);
@@ -101,7 +101,7 @@ namespace Faculty
             this.MaximizeBox = false;
             this.Name = "MostrarAlumnosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Mostrar Alumnos";
+            this.Text = "Alumnos inscritos";
             this.Load += new System.EventHandler(this.MostrarAlumnosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarAlumnos)).EndInit();
             this.ResumeLayout(false);
