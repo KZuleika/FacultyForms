@@ -249,5 +249,26 @@ namespace SQLiteDb
             }
             return materias;
         }
+        public List<Materia> GetExtraordinarios()
+        {
+            List<Materia> extraordinarios = new List<Materia>();
+            string sql = "SELECT m.materia AS materia, m.clave AS clave, m.creditos AS creditos, COUNT(*) AS alumnos_reprobados"
+                        + " FROM calificaciones c"
+                        + " INNER JOIN materias m on c.clave = m.clave"
+                        + " WHERE c.calificacion < 70 AND c.calificacion > -1"
+                        + " GROUP BY  m.clave"
+                        + " ORDER BY m.materia; ";
+
+            using (SQLiteRecordSet rs = ExecuteQuery(sql))
+            {
+                while (rs.NextRecord())
+                {
+                    extraordinarios.Add(new Materia(rs.GetInt32("clave"),
+                                           rs.GetString("materia"),
+                                           rs.GetInt32("alumnos_reprobados")));
+                }
+            }
+            return extraordinarios;
+        }
     }
 }

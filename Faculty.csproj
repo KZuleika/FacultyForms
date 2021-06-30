@@ -117,6 +117,9 @@
     <EmbeddedResource Include="AsignarCalificacionesForm.resx">
       <DependentUpon>AsignarCalificacionesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExtraordinariosForm.resx">
+      <DependentUpon>ExtraordinariosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

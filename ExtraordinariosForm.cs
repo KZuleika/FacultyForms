@@ -18,5 +18,10 @@ namespace Faculty
             InitializeComponent();
             this.controlEscolar = controlEscolar;
         }
+
+        private void ExtraordinariosForm_Load(object sender, EventArgs e)
+        {
+            dgvExtraordinarios.DataSource = controlEscolar.GetExtraordinarios();
+        }
     }
 }

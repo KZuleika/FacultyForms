@@ -73,5 +73,9 @@ namespace Faculty
         {
             return conn.GetMateriasReprobadasPorAlumno(matricula);
         }
+        public List<Materia> GetExtraordinarios()
+        {
+            return conn.GetExtraordinarios();
+        }
     }
 }
