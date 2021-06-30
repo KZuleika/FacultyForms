@@ -18,6 +18,7 @@ namespace SQLiteDb
             Matricula = matricula;
             NombreCompleto = nombreCompleto;
         }
+        public override string ToString() => $"{NombreCompleto} - {Matricula}";
     }
 
     public class Materia
@@ -32,6 +33,7 @@ namespace SQLiteDb
             Nombre = nombre;
             Creditos = creditos;
         }
+        public override string ToString() => $"{Nombre} - {Clave}";
     }
 
     public class AlumnoPromedio
@@ -39,7 +41,7 @@ namespace SQLiteDb
         public int Matricula { get; }
         public string NombreCompleto { get; }
         public double Promedio { get; }
-        public string NombreCompletoMatricula => $"{NombreCompleto} - {Matricula}";
+        //public string NombreCompletoMatricula => $"{NombreCompleto} - {Matricula}";
 
         public AlumnoPromedio(int matricula, string nombreCompleto, double promedio)
         {
@@ -47,6 +49,7 @@ namespace SQLiteDb
             NombreCompleto = nombreCompleto;
             Promedio = promedio;
         }
+        public override string ToString() => $"{NombreCompleto} - {Matricula}";
     }
     public partial class SQLiteConn
     {
