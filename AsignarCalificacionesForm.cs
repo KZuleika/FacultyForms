@@ -36,7 +36,8 @@ namespace Faculty
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-
+            controlEscolar.AsignarCalificacion((int)cmbAlumnos.SelectedValue, (int) lstMaterias.SelectedValue, (int) nupNuevaC.Value);
+            lstMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int)cmbAlumnos.SelectedValue);
         }
 
 
@@ -45,7 +46,7 @@ namespace Faculty
         {
             btnActualizar.Enabled = false;
             nupNuevaC.Value = 0;
-            tbAnteriorC.Text = "1";
+            //tbAnteriorC.Text = controlEscolar.GetCalificacion();
         }
 
         private void nupNuevaC_ValueChanged(object sender, EventArgs e)
