@@ -8,6 +8,7 @@ namespace Faculty
         private ControlEscolar controlEscolar;
         private int claveMat;
         private int nuevaC;
+        private bool matActualizada = false;
         public AsignarCalificacionesForm(ControlEscolar controlEscolar)
         {
             InitializeComponent();
@@ -16,10 +17,17 @@ namespace Faculty
             cmbAlumnos.DisplayMember = "ToString()";
             cmbAlumnos.ValueMember = "Matricula";
             cmbAlumnos.DataSource = controlEscolar.GetAlumnos(true);
+            }
 
-            lstMaterias.DisplayMember = "ToString()";
-            lstMaterias.ValueMember = "Clave";
-            lstMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int)cmbAlumnos.SelectedValue);
+        public AsignarCalificacionesForm(ControlEscolar controlEscolar, int alumnoSeleccionado)
+        {
+            InitializeComponent();
+            this.controlEscolar = controlEscolar;
+
+            cmbAlumnos.DisplayMember = "ToString()";
+            cmbAlumnos.ValueMember = "Matricula";
+            cmbAlumnos.DataSource = controlEscolar.GetAlumnos(true);
+            cmbAlumnos.SelectedValue = alumnoSeleccionado;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -29,41 +37,8 @@ namespace Faculty
 
         private void cbAlumnos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnActualizar.Enabled = false;
-            nupNuevaC.Value = 0;
-            //tbNuevaC.Text = "";
             int matricula = (int) cmbAlumnos.SelectedValue;
-            lstMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno(matricula);
-            tbAnteriorC.Text = $"{lstMaterias.SelectedItem}";
             dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int)cmbAlumnos.SelectedValue);
-        }
-
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            int matricula = (int)cmbAlumnos.SelectedValue;
-            int clave = (int)lstMaterias.SelectedValue;
-            int calificacion = (int)nupNuevaC.Value;
-            controlEscolar.AsignarCalificacion(matricula, clave, calificacion);
-            lstMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno(matricula);
-
-            MessageBox.Show($"Se ha actualizado la calificación del alumno {matricula} en {clave} a {calificacion}",
-                                 "Calificación asignada",
-                                 MessageBoxButtons.OK,
-                                 MessageBoxIcon.Information);
-        }
-
-
-
-        private void lstMaterias_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            btnActualizar.Enabled = false;
-            nupNuevaC.Value = 0;
-            //tbAnteriorC.Text = controlEscolar.GetCalificacion();
-        }
-
-        private void nupNuevaC_ValueChanged(object sender, EventArgs e)
-        {
-            btnActualizar.Enabled = true;
         }
 
         private void AsignarCalificacionesForm_Load(object sender, EventArgs e)
@@ -74,7 +49,11 @@ namespace Faculty
         private void dgvMaterias_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if(dgvMaterias.SelectedRows.Count > 0)
+            {
+                claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
                 nuevaC = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString());
+                matActualizada = true;
+            }
             //tbAnteriorC.Text = nuevaC.ToString();
         }
 
@@ -85,18 +64,32 @@ namespace Faculty
             //tbAnteriorC.Text = claveMat.ToString();
         }
 
-        //private void dgvMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
+        private void dgvMaterias_SelectionChanged(object sender, EventArgs e)
+        {
+            int matricula = (int)cmbAlumnos.SelectedValue;
+            if(matActualizada)
+            {
+                matActualizada = false;
+                switch (MessageBox.Show($"¿Desea cambiar la calificación del alumno {matricula} en {claveMat} a {nuevaC}?",
+                                 "Confirmación",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question))
+                {
+                    case DialogResult.Yes:
+                        controlEscolar.AsignarCalificacion(matricula, claveMat, nuevaC);
+                        dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno(matricula);
+                        break;
+                    default:
+                    case DialogResult.No:
+                        Close();
+                        AsignarCalificacionesForm form = new AsignarCalificacionesForm(controlEscolar, matricula);
+                        form.ShowDialog();
+                        break;
+                }
+                
+            }
+            
+        }
 
-        //}
-
-
-        //private void tbNuevaC_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (tbNuevaC.Text.Trim().Length > 0)
-        //        btnActualizar.Enabled = true;
-        //    else
-        //        btnActualizar.Enabled = false;
-        //}
     }
 }

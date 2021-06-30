@@ -31,22 +31,13 @@ namespace Faculty
         {
             this.cmbAlumnos = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nupNuevaC = new System.Windows.Forms.NumericUpDown();
-            this.tbAnteriorC = new System.Windows.Forms.TextBox();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.lstMaterias = new System.Windows.Forms.ListBox();
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
             this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CalifAnt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NuevaC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupNuevaC)).BeginInit();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,79 +65,6 @@ namespace Faculty
             this.label4.TabIndex = 6;
             this.label4.Text = "Asignar calificación";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 20);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Anterior";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.nupNuevaC);
-            this.groupBox1.Controls.Add(this.tbAnteriorC);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(543, 442);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(477, 200);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Calificación";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 20);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Nueva";
-            // 
-            // nupNuevaC
-            // 
-            this.nupNuevaC.Location = new System.Drawing.Point(24, 150);
-            this.nupNuevaC.Name = "nupNuevaC";
-            this.nupNuevaC.Size = new System.Drawing.Size(194, 27);
-            this.nupNuevaC.TabIndex = 13;
-            this.nupNuevaC.ValueChanged += new System.EventHandler(this.nupNuevaC_ValueChanged);
-            // 
-            // tbAnteriorC
-            // 
-            this.tbAnteriorC.Enabled = false;
-            this.tbAnteriorC.Location = new System.Drawing.Point(24, 64);
-            this.tbAnteriorC.Name = "tbAnteriorC";
-            this.tbAnteriorC.Size = new System.Drawing.Size(194, 27);
-            this.tbAnteriorC.TabIndex = 9;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrar.Location = new System.Drawing.Point(891, 703);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(129, 41);
-            this.btnCerrar.TabIndex = 10;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Enabled = false;
-            this.btnActualizar.Location = new System.Drawing.Point(891, 656);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(129, 41);
-            this.btnActualizar.TabIndex = 10;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -155,16 +73,6 @@ namespace Faculty
             this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 11;
             this.label3.Text = "Alumno";
-            // 
-            // lstMaterias
-            // 
-            this.lstMaterias.FormattingEnabled = true;
-            this.lstMaterias.ItemHeight = 20;
-            this.lstMaterias.Location = new System.Drawing.Point(12, 460);
-            this.lstMaterias.Name = "lstMaterias";
-            this.lstMaterias.Size = new System.Drawing.Size(500, 284);
-            this.lstMaterias.TabIndex = 12;
-            this.lstMaterias.SelectedIndexChanged += new System.EventHandler(this.lstMaterias_SelectedIndexChanged);
             // 
             // dgvMaterias
             // 
@@ -179,10 +87,11 @@ namespace Faculty
             this.dgvMaterias.RowHeadersWidth = 51;
             this.dgvMaterias.RowTemplate.Height = 24;
             this.dgvMaterias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMaterias.Size = new System.Drawing.Size(975, 244);
+            this.dgvMaterias.Size = new System.Drawing.Size(975, 409);
             this.dgvMaterias.TabIndex = 13;
             this.dgvMaterias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterias_CellContentClick);
             this.dgvMaterias.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterias_CellValueChanged);
+            this.dgvMaterias.SelectionChanged += new System.EventHandler(this.dgvMaterias_SelectionChanged);
             // 
             // Clave
             // 
@@ -219,19 +128,27 @@ namespace Faculty
             this.NuevaC.Name = "NuevaC";
             this.NuevaC.Width = 125;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrar.Location = new System.Drawing.Point(872, 593);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(129, 41);
+            this.btnCerrar.TabIndex = 10;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // AsignarCalificacionesForm
             // 
-            this.AcceptButton = this.btnActualizar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(1032, 771);
-            this.Controls.Add(this.dgvMaterias);
-            this.Controls.Add(this.lstMaterias);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnActualizar);
+            this.ClientSize = new System.Drawing.Size(1032, 646);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dgvMaterias);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbAlumnos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -242,9 +159,6 @@ namespace Faculty
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Asignar calificación";
             this.Load += new System.EventHandler(this.AsignarCalificacionesForm_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupNuevaC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -255,19 +169,12 @@ namespace Faculty
 
         private System.Windows.Forms.ComboBox cmbAlumnos;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbAnteriorC;
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox lstMaterias;
-        private System.Windows.Forms.NumericUpDown nupNuevaC;
         private System.Windows.Forms.DataGridView dgvMaterias;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
         private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn CalifAnt;
         private System.Windows.Forms.DataGridViewTextBoxColumn NuevaC;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
