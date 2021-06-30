@@ -33,17 +33,16 @@ namespace Faculty
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbNuevaC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.nupNuevaC = new System.Windows.Forms.NumericUpDown();
             this.tbAnteriorC = new System.Windows.Forms.TextBox();
+            this.tbNuevaC = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgvMaterias = new System.Windows.Forms.DataGridView();
-            this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lstMaterias = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupNuevaC)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbAlumnos
@@ -83,23 +82,16 @@ namespace Faculty
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.tbNuevaC);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.nupNuevaC);
             this.groupBox1.Controls.Add(this.tbAnteriorC);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(610, 178);
+            this.groupBox1.Location = new System.Drawing.Point(543, 178);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(224, 200);
+            this.groupBox1.Size = new System.Drawing.Size(236, 200);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Calificación";
-            // 
-            // tbNuevaC
-            // 
-            this.tbNuevaC.Location = new System.Drawing.Point(24, 139);
-            this.tbNuevaC.Name = "tbNuevaC";
-            this.tbNuevaC.Size = new System.Drawing.Size(194, 27);
-            this.tbNuevaC.TabIndex = 9;
             // 
             // label2
             // 
@@ -110,6 +102,13 @@ namespace Faculty
             this.label2.TabIndex = 8;
             this.label2.Text = "Nueva";
             // 
+            // nupNuevaC
+            // 
+            this.nupNuevaC.Location = new System.Drawing.Point(24, 150);
+            this.nupNuevaC.Name = "nupNuevaC";
+            this.nupNuevaC.Size = new System.Drawing.Size(194, 27);
+            this.nupNuevaC.TabIndex = 13;
+            // 
             // tbAnteriorC
             // 
             this.tbAnteriorC.Enabled = false;
@@ -118,11 +117,19 @@ namespace Faculty
             this.tbAnteriorC.Size = new System.Drawing.Size(194, 27);
             this.tbAnteriorC.TabIndex = 9;
             // 
+            // tbNuevaC
+            // 
+            this.tbNuevaC.Location = new System.Drawing.Point(571, 126);
+            this.tbNuevaC.Name = "tbNuevaC";
+            this.tbNuevaC.Size = new System.Drawing.Size(194, 27);
+            this.tbNuevaC.TabIndex = 9;
+            this.tbNuevaC.TextChanged += new System.EventHandler(this.tbNuevaC_TextChanged);
+            // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrar.Location = new System.Drawing.Point(705, 439);
+            this.btnCerrar.Location = new System.Drawing.Point(650, 439);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(129, 41);
             this.btnCerrar.TabIndex = 10;
@@ -133,12 +140,14 @@ namespace Faculty
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(705, 392);
+            this.btnActualizar.Enabled = false;
+            this.btnActualizar.Location = new System.Drawing.Point(650, 392);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(129, 41);
             this.btnActualizar.TabIndex = 10;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // label3
             // 
@@ -149,41 +158,15 @@ namespace Faculty
             this.label3.TabIndex = 11;
             this.label3.Text = "Alumno";
             // 
-            // dgvMaterias
+            // lstMaterias
             // 
-            this.dgvMaterias.AllowUserToAddRows = false;
-            this.dgvMaterias.AllowUserToDeleteRows = false;
-            this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Clave,
-            this.Nombre});
-            this.dgvMaterias.Location = new System.Drawing.Point(26, 178);
-            this.dgvMaterias.MultiSelect = false;
-            this.dgvMaterias.Name = "dgvMaterias";
-            this.dgvMaterias.ReadOnly = true;
-            this.dgvMaterias.RowHeadersWidth = 51;
-            this.dgvMaterias.RowTemplate.Height = 24;
-            this.dgvMaterias.Size = new System.Drawing.Size(566, 302);
-            this.dgvMaterias.TabIndex = 12;
-            this.dgvMaterias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterias_CellContentClick);
-            // 
-            // Clave
-            // 
-            this.Clave.DataPropertyName = "Clave";
-            this.Clave.HeaderText = "Clave";
-            this.Clave.MinimumWidth = 85;
-            this.Clave.Name = "Clave";
-            this.Clave.ReadOnly = true;
-            this.Clave.Width = 125;
-            // 
-            // Nombre
-            // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Materia";
-            this.Nombre.MinimumWidth = 150;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
+            this.lstMaterias.FormattingEnabled = true;
+            this.lstMaterias.ItemHeight = 20;
+            this.lstMaterias.Location = new System.Drawing.Point(26, 178);
+            this.lstMaterias.Name = "lstMaterias";
+            this.lstMaterias.Size = new System.Drawing.Size(500, 304);
+            this.lstMaterias.TabIndex = 12;
+            this.lstMaterias.SelectedIndexChanged += new System.EventHandler(this.lstMaterias_SelectedIndexChanged);
             // 
             // AsignarCalificacionesForm
             // 
@@ -191,8 +174,9 @@ namespace Faculty
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(846, 507);
-            this.Controls.Add(this.dgvMaterias);
+            this.ClientSize = new System.Drawing.Size(791, 507);
+            this.Controls.Add(this.tbNuevaC);
+            this.Controls.Add(this.lstMaterias);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnCerrar);
@@ -205,7 +189,7 @@ namespace Faculty
             this.Text = "AsignarCalificacionesForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupNuevaC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,8 +207,7 @@ namespace Faculty
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgvMaterias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.ListBox lstMaterias;
+        private System.Windows.Forms.NumericUpDown nupNuevaC;
     }
 }

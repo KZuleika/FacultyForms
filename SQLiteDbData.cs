@@ -25,7 +25,7 @@ namespace SQLiteDb
         public int Clave { get; }
         public string Nombre { get; }
         public int Creditos { get; }
-
+        public string NombreConClave => $"{Nombre} - {Clave}";
         public Materia(int clave, string nombre, int creditos)
         {
             Clave = clave;
