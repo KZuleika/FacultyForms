@@ -11,8 +11,6 @@ namespace SQLiteDb
     {
         public int Matricula { get; }
         public string NombreCompleto { get; }
-
-        public string NombreCompletoMatricula => $"{NombreCompleto} - {Matricula}";
         public Alumno(int matricula, string nombreCompleto)
         {
             Matricula = matricula;
@@ -26,7 +24,6 @@ namespace SQLiteDb
         public int Clave { get; }
         public string Nombre { get; }
         public int Creditos { get; }
-        public string NombreConClave => $"{Nombre} - {Clave}";
         public Materia(int clave, string nombre, int creditos)
         {
             Clave = clave;

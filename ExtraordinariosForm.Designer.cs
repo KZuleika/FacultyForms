@@ -31,9 +31,9 @@ namespace Faculty
         {
             this.dgvExtraordinarios = new System.Windows.Forms.DataGridView();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Creditos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumReprobados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExtraordinarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,12 +45,14 @@ namespace Faculty
             this.dgvExtraordinarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Clave,
             this.Nombre,
-            this.NumReprobados});
+            this.Creditos});
             this.dgvExtraordinarios.Location = new System.Drawing.Point(13, 54);
             this.dgvExtraordinarios.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvExtraordinarios.MultiSelect = false;
             this.dgvExtraordinarios.Name = "dgvExtraordinarios";
             this.dgvExtraordinarios.RowHeadersWidth = 51;
             this.dgvExtraordinarios.RowTemplate.Height = 24;
+            this.dgvExtraordinarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvExtraordinarios.Size = new System.Drawing.Size(774, 335);
             this.dgvExtraordinarios.TabIndex = 7;
             // 
@@ -66,6 +68,22 @@ namespace Faculty
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
+            // Creditos
+            // 
+            this.Creditos.DataPropertyName = "Creditos";
+            this.Creditos.HeaderText = "Número de reprobados";
+            this.Creditos.MinimumWidth = 100;
+            this.Creditos.Name = "Creditos";
+            this.Creditos.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Materia";
+            this.Nombre.MinimumWidth = 150;
+            this.Nombre.Name = "Nombre";
+            // 
             // Clave
             // 
             this.Clave.DataPropertyName = "Clave";
@@ -76,22 +94,6 @@ namespace Faculty
             this.Clave.Name = "Clave";
             this.Clave.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Clave.Width = 150;
-            // 
-            // Nombre
-            // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Materia";
-            this.Nombre.MinimumWidth = 150;
-            this.Nombre.Name = "Nombre";
-            // 
-            // NumReprobados
-            // 
-            this.NumReprobados.DataPropertyName = "NumReprobados";
-            this.NumReprobados.HeaderText = "Número de reprobados";
-            this.NumReprobados.MinimumWidth = 100;
-            this.NumReprobados.Name = "NumReprobados";
-            this.NumReprobados.Width = 125;
             // 
             // ExtraordinariosForm
             // 
@@ -115,6 +117,6 @@ namespace Faculty
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumReprobados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Creditos;
     }
 }

@@ -15,8 +15,9 @@ namespace Faculty
             cmbAlumnos.ValueMember = "Matricula";
             cmbAlumnos.DataSource = controlEscolar.GetAlumnos(true);
 
-            lstMaterias.DisplayMember = "NombreConClave";
+            lstMaterias.DisplayMember = "ToString()";
             lstMaterias.ValueMember = "Clave";
+            lstMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int)cmbAlumnos.SelectedValue);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
