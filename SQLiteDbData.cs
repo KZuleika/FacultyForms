@@ -190,6 +190,25 @@ namespace SQLiteDb
             }
             return alumnos;
         }
+        public List<AlumnoPromedio> GetAlumnosPromedioParcial()
+        {
+            List<AlumnoPromedio> alumnos = new List<AlumnoPromedio>();
+            string sql = "SELECT a.apellido || ', ' ||a.nombre AS nombre_completo, a.matricula,  avg(c.calificacion) AS promedio_parcial"
+                        + " FROM alumnos a"
+                        + " INNER JOIN calificaciones c ON(a.matricula = c.matricula)"
+                        + " WHERE c.calificacion >= 70"
+                        + " GROUP BY a.matricula"
+                        + " ORDER BY a.apellido, a.nombre, a.matricula; ";
+            using (SQLiteRecordSet rs = ExecuteQuery(sql))
+            {
+                while (rs.NextRecord())
+                {
+                    alumnos.Add(new AlumnoPromedio(rs.GetInt32("matricula"),
+                                           rs.GetString("nombre_completo"), rs.GetDouble("promedio_parcial")));
+                }
+            }
+            return alumnos;
+        }
 
     }
 }

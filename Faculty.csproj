@@ -123,6 +123,9 @@
     <EmbeddedResource Include="MostrarMateriasForm.resx">
       <DependentUpon>MostrarMateriasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PromedioParcialForm.resx">
+      <DependentUpon>PromedioParcialForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PromedioTotalForm.resx">
       <DependentUpon>PromedioTotalForm.cs</DependentUpon>
     </EmbeddedResource>

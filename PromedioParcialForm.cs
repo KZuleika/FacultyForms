@@ -18,5 +18,10 @@ namespace Faculty
             InitializeComponent();
             this.controlEscolar = controlEscolar;
         }
+
+        private void PromedioParcialForm_Load(object sender, EventArgs e)
+        {
+            dgvMostrarAlumnos.DataSource = controlEscolar.GetAlumnosPromedioParcial();
+        }
     }
 }

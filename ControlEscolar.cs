@@ -60,5 +60,9 @@ namespace Faculty
         {
             return conn.GetAlumnosPromedioTotal();
         }
+        public List<AlumnoPromedio> GetAlumnosPromedioParcial()
+        {
+            return conn.GetAlumnosPromedioParcial();
+        }
     }
 }
