@@ -150,5 +150,12 @@ namespace SQLiteDb
 
             return materias;
         }
+
+        public void AsignarCalificacion(int matricula, int clave, int calificacion)
+        {
+            string sql = $"UPDATE calificaciones SET calificacion = {calificacion}" 
+                        + $" WHERE matricula = {matricula} AND clave = {clave};";
+            ExecuteNonQuery(sql);
+        }
     }
 }

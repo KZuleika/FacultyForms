@@ -28,7 +28,7 @@ namespace Faculty
         {
             btnActualizar.Enabled = false;
             nupNuevaC.Value = 0;
-            tbNuevaC.Text = "";
+            //tbNuevaC.Text = "";
             int matricula = (int) cmbAlumnos.SelectedValue;
             lstMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno(matricula);
             tbAnteriorC.Text = $"{lstMaterias.SelectedItem}";
@@ -36,27 +36,41 @@ namespace Faculty
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            controlEscolar.AsignarCalificacion((int)cmbAlumnos.SelectedValue, (int) lstMaterias.SelectedValue, (int) nupNuevaC.Value);
+            lstMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int)cmbAlumnos.SelectedValue);
 
+            MessageBox.Show($"Se ha actualizado la calificación del alumno {cmbAlumnos.SelectedValue} en {lstMaterias.SelectedValue} a {nupNuevaC.Value}",
+                                 "Calificación asignada",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information);
         }
 
 
-        private void tbNuevaC_TextChanged(object sender, EventArgs e)
-        {
-            if (tbNuevaC.Text.Trim().Length > 0)
-                btnActualizar.Enabled = true;
-            else
-                btnActualizar.Enabled = false;
-        }
 
         private void lstMaterias_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnActualizar.Enabled = false;
-            tbNuevaC.Text = "";
+            nupNuevaC.Value = 0;
+            //tbAnteriorC.Text = controlEscolar.GetCalificacion();
+        }
+
+        private void nupNuevaC_ValueChanged(object sender, EventArgs e)
+        {
+            btnActualizar.Enabled = true;
         }
 
         //private void dgvMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
         //{
 
+        //}
+
+
+        //private void tbNuevaC_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (tbNuevaC.Text.Trim().Length > 0)
+        //        btnActualizar.Enabled = true;
+        //    else
+        //        btnActualizar.Enabled = false;
         //}
     }
 }

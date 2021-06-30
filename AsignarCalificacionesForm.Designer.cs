@@ -36,7 +36,6 @@ namespace Faculty
             this.label2 = new System.Windows.Forms.Label();
             this.nupNuevaC = new System.Windows.Forms.NumericUpDown();
             this.tbAnteriorC = new System.Windows.Forms.TextBox();
-            this.tbNuevaC = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -108,6 +107,7 @@ namespace Faculty
             this.nupNuevaC.Name = "nupNuevaC";
             this.nupNuevaC.Size = new System.Drawing.Size(194, 27);
             this.nupNuevaC.TabIndex = 13;
+            this.nupNuevaC.ValueChanged += new System.EventHandler(this.nupNuevaC_ValueChanged);
             // 
             // tbAnteriorC
             // 
@@ -116,14 +116,6 @@ namespace Faculty
             this.tbAnteriorC.Name = "tbAnteriorC";
             this.tbAnteriorC.Size = new System.Drawing.Size(194, 27);
             this.tbAnteriorC.TabIndex = 9;
-            // 
-            // tbNuevaC
-            // 
-            this.tbNuevaC.Location = new System.Drawing.Point(571, 126);
-            this.tbNuevaC.Name = "tbNuevaC";
-            this.tbNuevaC.Size = new System.Drawing.Size(194, 27);
-            this.tbNuevaC.TabIndex = 9;
-            this.tbNuevaC.TextChanged += new System.EventHandler(this.tbNuevaC_TextChanged);
             // 
             // btnCerrar
             // 
@@ -175,7 +167,6 @@ namespace Faculty
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(791, 507);
-            this.Controls.Add(this.tbNuevaC);
             this.Controls.Add(this.lstMaterias);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnActualizar);
@@ -201,7 +192,6 @@ namespace Faculty
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox tbNuevaC;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbAnteriorC;
         private System.Windows.Forms.Button btnCerrar;

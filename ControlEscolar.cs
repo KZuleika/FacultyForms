@@ -51,5 +51,9 @@ namespace Faculty
             }
             return true;
         }
+        public void AsignarCalificacion(int matricula, int clave, int calificacion)
+        {
+            conn.AsignarCalificacion(matricula, clave, calificacion);
+        }
     }
 }
