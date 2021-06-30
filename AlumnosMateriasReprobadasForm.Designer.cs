@@ -61,7 +61,7 @@ namespace Faculty
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label4.Location = new System.Drawing.Point(94, 27);
+            this.label4.Location = new System.Drawing.Point(19, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(535, 38);
             this.label4.TabIndex = 14;
@@ -99,8 +99,11 @@ namespace Faculty
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbAlumnos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "AlumnosMateriasReprobadasForm";
-            this.Text = "AlumnosMateriasReprobadasForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Materias reprobadas por alumno";
             this.Load += new System.EventHandler(this.AlumnosMateriasReprobadasForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
