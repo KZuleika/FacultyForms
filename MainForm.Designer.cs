@@ -90,14 +90,14 @@ namespace Faculty
             // alumnosToolStripMenuItem
             // 
             this.alumnosToolStripMenuItem.Name = "alumnosToolStripMenuItem";
-            this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.alumnosToolStripMenuItem.Text = "Alumnos";
             this.alumnosToolStripMenuItem.Click += new System.EventHandler(this.alumnosToolStripMenuItem_Click);
             // 
             // materiasToolStripMenuItem
             // 
             this.materiasToolStripMenuItem.Name = "materiasToolStripMenuItem";
-            this.materiasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.materiasToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.materiasToolStripMenuItem.Text = "Materias";
             this.materiasToolStripMenuItem.Click += new System.EventHandler(this.materiasToolStripMenuItem_Click);
             // 
@@ -113,6 +113,7 @@ namespace Faculty
             this.altaDeToolStripMenuItem.Name = "altaDeToolStripMenuItem";
             this.altaDeToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.altaDeToolStripMenuItem.Text = "Asignar calificación";
+            this.altaDeToolStripMenuItem.Click += new System.EventHandler(this.altaDeToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -132,14 +133,14 @@ namespace Faculty
             // 
             this.acercaDeToolStripMenuItem.Enabled = false;
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.acercaDeToolStripMenuItem.Text = "Acerca de...";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(16, 40);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(734, 522);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -156,7 +157,7 @@ namespace Faculty
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

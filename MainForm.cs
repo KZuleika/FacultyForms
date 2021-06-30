@@ -44,5 +44,11 @@ namespace Faculty
             AltaAlumnosForm form = new AltaAlumnosForm(controlEscolar);
             form.ShowDialog();
         }
+
+        private void altaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AsignarCalificacionesForm form = new AsignarCalificacionesForm();
+            form.ShowDialog();
+        }
     }
 }
