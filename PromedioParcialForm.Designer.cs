@@ -30,11 +30,11 @@ namespace Faculty
         private void InitializeComponent()
         {
             this.dgvMostrarAlumnos = new System.Windows.Forms.DataGridView();
-            this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.Promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,33 +54,6 @@ namespace Faculty
             this.dgvMostrarAlumnos.RowTemplate.Height = 24;
             this.dgvMostrarAlumnos.Size = new System.Drawing.Size(774, 335);
             this.dgvMostrarAlumnos.TabIndex = 5;
-            // 
-            // Matricula
-            // 
-            this.Matricula.DataPropertyName = "Matricula";
-            this.Matricula.DividerWidth = 1;
-            this.Matricula.Frozen = true;
-            this.Matricula.HeaderText = "Matricula";
-            this.Matricula.MinimumWidth = 100;
-            this.Matricula.Name = "Matricula";
-            this.Matricula.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Matricula.Width = 150;
-            // 
-            // NombreCompleto
-            // 
-            this.NombreCompleto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NombreCompleto.DataPropertyName = "NombreCompleto";
-            this.NombreCompleto.HeaderText = "Nombre Completo";
-            this.NombreCompleto.MinimumWidth = 150;
-            this.NombreCompleto.Name = "NombreCompleto";
-            // 
-            // Promedio
-            // 
-            this.Promedio.DataPropertyName = "Promedio";
-            this.Promedio.HeaderText = "Promedio Parcial";
-            this.Promedio.MinimumWidth = 100;
-            this.Promedio.Name = "Promedio";
-            this.Promedio.Width = 125;
             // 
             // btnCerrar
             // 
@@ -102,6 +75,33 @@ namespace Faculty
             this.label1.Size = new System.Drawing.Size(220, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "Promedio Asignaturas Aprobadas";
+            // 
+            // Promedio
+            // 
+            this.Promedio.DataPropertyName = "Promedio";
+            this.Promedio.HeaderText = "Promedio Parcial";
+            this.Promedio.MinimumWidth = 100;
+            this.Promedio.Name = "Promedio";
+            this.Promedio.Width = 125;
+            // 
+            // NombreCompleto
+            // 
+            this.NombreCompleto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NombreCompleto.DataPropertyName = "NombreCompleto";
+            this.NombreCompleto.HeaderText = "Nombre Completo";
+            this.NombreCompleto.MinimumWidth = 150;
+            this.NombreCompleto.Name = "NombreCompleto";
+            // 
+            // Matricula
+            // 
+            this.Matricula.DataPropertyName = "Matricula";
+            this.Matricula.DividerWidth = 1;
+            this.Matricula.Frozen = true;
+            this.Matricula.HeaderText = "Matricula";
+            this.Matricula.MinimumWidth = 100;
+            this.Matricula.Name = "Matricula";
+            this.Matricula.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Matricula.Width = 150;
             // 
             // PromedioParcialForm
             // 
@@ -128,9 +128,9 @@ namespace Faculty
 
         private System.Windows.Forms.DataGridView dgvMostrarAlumnos;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Promedio;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -41,8 +41,7 @@ namespace SQLiteDb
         public int Matricula { get; }
         public string NombreCompleto { get; }
         public double Promedio { get; }
-        //public string NombreCompletoMatricula => $"{NombreCompleto} - {Matricula}";
-
+        
         public AlumnoPromedio(int matricula, string nombreCompleto, double promedio)
         {
             Matricula = matricula;
