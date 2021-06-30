@@ -47,7 +47,7 @@ namespace Faculty
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(55, 123);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 20);
+            this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Matrícula";
             // 
@@ -58,7 +58,7 @@ namespace Faculty
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(55, 165);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Apellido";
             // 
@@ -68,7 +68,7 @@ namespace Faculty
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbApellido.Location = new System.Drawing.Point(147, 158);
             this.tbApellido.Name = "tbApellido";
-            this.tbApellido.Size = new System.Drawing.Size(466, 27);
+            this.tbApellido.Size = new System.Drawing.Size(466, 23);
             this.tbApellido.TabIndex = 2;
             // 
             // tbNombre
@@ -77,7 +77,7 @@ namespace Faculty
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbNombre.Location = new System.Drawing.Point(147, 201);
             this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(466, 27);
+            this.tbNombre.Size = new System.Drawing.Size(466, 23);
             this.tbNombre.TabIndex = 3;
             // 
             // label3
@@ -87,7 +87,7 @@ namespace Faculty
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(55, 208);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Nombre";
             // 
@@ -124,7 +124,7 @@ namespace Faculty
             this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label4.Location = new System.Drawing.Point(140, 32);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(346, 38);
+            this.label4.Size = new System.Drawing.Size(292, 34);
             this.label4.TabIndex = 5;
             this.label4.Text = "Alta de nuevo alumno";
             // 
@@ -135,13 +135,13 @@ namespace Faculty
             this.tbMatricula.Location = new System.Drawing.Point(147, 116);
             this.tbMatricula.MaxLength = 10;
             this.tbMatricula.Name = "tbMatricula";
-            this.tbMatricula.Size = new System.Drawing.Size(466, 27);
+            this.tbMatricula.Size = new System.Drawing.Size(466, 23);
             this.tbMatricula.TabIndex = 1;
             // 
             // AltaAlumnosForm
             // 
             this.AcceptButton = this.btnGuardar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(642, 315);
@@ -155,10 +155,11 @@ namespace Faculty
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "AltaAlumnosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AltaAlumnosForm";
+            this.Text = "Inscripcion de Alumnos";
             this.ResumeLayout(false);
             this.PerformLayout();
 
