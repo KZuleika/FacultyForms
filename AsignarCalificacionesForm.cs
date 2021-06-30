@@ -38,6 +38,11 @@ namespace Faculty
         {
             controlEscolar.AsignarCalificacion((int)cmbAlumnos.SelectedValue, (int) lstMaterias.SelectedValue, (int) nupNuevaC.Value);
             lstMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int)cmbAlumnos.SelectedValue);
+
+            MessageBox.Show($"Se ha actualizado la calificación del alumno {cmbAlumnos.SelectedValue} en {lstMaterias.SelectedValue} a {nupNuevaC.Value}",
+                                 "Calificación asignada",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information);
         }
 
 
