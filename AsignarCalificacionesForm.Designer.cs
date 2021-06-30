@@ -50,7 +50,7 @@ namespace Faculty
             this.cmbAlumnos.Name = "cmbAlumnos";
             this.cmbAlumnos.Size = new System.Drawing.Size(322, 28);
             this.cmbAlumnos.TabIndex = 0;
-            this.cmbAlumnos.SelectedIndexChanged += new System.EventHandler(this.cbAlumnos_SelectedIndexChanged);
+            this.cmbAlumnos.SelectedIndexChanged += new System.EventHandler(this.cmbAlumnos_SelectedIndexChanged);
             // 
             // label4
             // 

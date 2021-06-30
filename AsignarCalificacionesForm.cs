@@ -35,7 +35,7 @@ namespace Faculty
             Close();
         }
 
-        private void cbAlumnos_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbAlumnos_SelectedIndexChanged(object sender, EventArgs e)
         {
             int matricula = (int) cmbAlumnos.SelectedValue;
             dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int)cmbAlumnos.SelectedValue);
@@ -70,7 +70,10 @@ namespace Faculty
             if(matActualizada)
             {
                 matActualizada = false;
-                switch (MessageBox.Show($"¿Desea cambiar la calificación del alumno {matricula} en {claveMat} a {nuevaC}?",
+                switch (MessageBox.Show($"¿Desea cambiar la calificación del alumno " 
+                                        + $"{cmbAlumnos.SelectedItem} "
+                                        + $" en {dgvMaterias.SelectedRows[0].Cells["Materia"].Value.ToString()}"
+                                        + $" a {nuevaC}?",
                                  "Confirmación",
                                  MessageBoxButtons.YesNo,
                                  MessageBoxIcon.Question))
