@@ -38,8 +38,9 @@ namespace Faculty
             string nombre = tbNombre.Text;
             string apellido = tbApellido.Text;
 
-            if(tbMatricula.Text.Trim().Length > 0) matricula = Convert.ToInt32(tbMatricula.Text.Trim());
+            if (tbMatricula.Text.Trim().Length > 0) matricula = Convert.ToInt32(tbMatricula.Text.Trim());
 
+            //revisa que los campos esten llenos
             if (tbMatricula.Text.Trim().Length < 1 || tbApellido.Text.Trim().Length < 1 || tbNombre.Text.Trim().Length < 1) {
                 switch (MessageBox.Show("Campo(s) vacio(s).\nRellene todos campos.",
                                  "Campo(s) vacio(s)",
@@ -70,13 +71,19 @@ namespace Faculty
                         Close();
                         AltaAlumnosForm form = new AltaAlumnosForm(controlEscolar, nombre, apellido);
                         form.ShowDialog();
-                        break;
+                        //break;
+                        return;
                     default:
                     case DialogResult.Cancel:
                         Close();
-                        break;
+                        //break;
+                        return;
                 }
             }
+            MessageBox.Show("Alumno ingresado con éxito",
+                                 "Alta exitosa",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information);
         }
     }
 }
