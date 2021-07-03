@@ -10,6 +10,7 @@ namespace Faculty
         private int nuevaC;
         private bool matActualizada = false;
         private bool matError = false;
+        private string materiaSeleccionada;
         public AsignarCalificacionesForm(ControlEscolar controlEscolar)
         {
             InitializeComponent();
@@ -53,11 +54,13 @@ namespace Faculty
             {
                 claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
                 nuevaC = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString());
+                materiaSeleccionada = dgvMaterias.SelectedRows[0].Cells["Materia"].Value.ToString();
                 matActualizada = true;
             } else if (dgvMaterias.SelectedRows.Count > 0 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) <= -1)
             {
                 claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
                 nuevaC = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString());
+                materiaSeleccionada = dgvMaterias.SelectedRows[0].Cells["Materia"].Value.ToString();
                 matError = true;
             }
             //tbAnteriorC.Text = nuevaC.ToString();
@@ -78,7 +81,7 @@ namespace Faculty
                 matActualizada = false;
                 switch (MessageBox.Show($"¿Desea cambiar la calificación del alumno " 
                                         + $"{cmbAlumnos.SelectedItem} "
-                                        + $" en {dgvMaterias.SelectedRows[0].Cells["Materia"].Value.ToString()}"
+                                        + $" en {materiaSeleccionada}"
                                         + $" a {nuevaC}?",
                                  "Confirmación",
                                  MessageBoxButtons.YesNo,
@@ -103,7 +106,7 @@ namespace Faculty
                 matError = false;
                 switch (MessageBox.Show($"Calificación no permitida "
                                         + $"{cmbAlumnos.SelectedItem} "
-                                        + $" en {dgvMaterias.SelectedRows[0].Cells["Materia"].Value.ToString()}"
+                                        + $" en {materiaSeleccionada}"
                                         + $" a {nuevaC}?",
                                  "Error",
                                  MessageBoxButtons.OK,
