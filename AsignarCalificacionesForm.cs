@@ -54,7 +54,7 @@ namespace Faculty
                 claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
                 nuevaC = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString());
                 matActualizada = true;
-            } else if (dgvMaterias.SelectedRows.Count > 0 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) >= -1)
+            } else if (dgvMaterias.SelectedRows.Count > 0 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) <= -1)
             {
                 claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
                 nuevaC = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString());
@@ -105,7 +105,7 @@ namespace Faculty
                                         + $"{cmbAlumnos.SelectedItem} "
                                         + $" en {dgvMaterias.SelectedRows[0].Cells["Materia"].Value.ToString()}"
                                         + $" a {nuevaC}?",
-                                 "Reintentar",
+                                 "Error",
                                  MessageBoxButtons.OK,
                                  MessageBoxIcon.Error))
                 {
