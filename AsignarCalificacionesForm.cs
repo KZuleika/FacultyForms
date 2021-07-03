@@ -50,13 +50,13 @@ namespace Faculty
 
         private void dgvMaterias_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvMaterias.SelectedRows.Count > 0 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString())>-1)
+            if(dgvMaterias.SelectedRows.Count > 0 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString())>-1 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) <= 100)
             {
                 claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
                 nuevaC = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString());
                 materiaSeleccionada = dgvMaterias.SelectedRows[0].Cells["Materia"].Value.ToString();
                 matActualizada = true;
-            } else if (dgvMaterias.SelectedRows.Count > 0 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) <= -1)
+            } else if (dgvMaterias.SelectedRows.Count > 0 && (Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) <= -1 || Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) >100))
             {
                 claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
                 nuevaC = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString());
