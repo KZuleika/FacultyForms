@@ -251,11 +251,10 @@ namespace SQLiteDb
         public List<Materia> GetExtraordinarios()
         {
             List<Materia> extraordinarios = new List<Materia>();
-            string sql = "SELECT m.materia AS materia, m.clave AS clave, m.creditos AS creditos, COUNT(*) AS alumnos_reprobados"
-                        + " FROM calificaciones c"
-                        + " INNER JOIN materias m on c.clave = m.clave"
-                        + " WHERE c.calificacion < 70 AND c.calificacion > -1"
-                        + " GROUP BY  m.clave"
+            string sql = "SELECT m.materia AS materia, m.clave AS clave, COUNT(c.matricula) AS alumnos_reprobados"
+                        + " FROM materias m"
+                        + " LEFT JOIN calificaciones c on m.clave = c.clave AND (c.calificacion<70 AND c.calificacion>-1)"
+                        + " GROUP BY  m.clave, m.materia"
                         + " ORDER BY m.materia; ";
 
             using (SQLiteRecordSet rs = ExecuteQuery(sql))
