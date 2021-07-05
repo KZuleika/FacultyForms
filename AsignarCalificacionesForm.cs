@@ -92,9 +92,6 @@ namespace Faculty
                         break;
                     default:
                     case DialogResult.No:
-                        Close();
-                        AsignarCalificacionesForm form = new AsignarCalificacionesForm(controlEscolar, matricula);
-                        form.ShowDialog();
                         break;
                 }
                 
@@ -113,9 +110,6 @@ namespace Faculty
                 {
                     default:
                     case DialogResult.OK:
-                        Close();
-                        AsignarCalificacionesForm form = new AsignarCalificacionesForm(controlEscolar, matricula);
-                        form.ShowDialog();
                         break;
                 }
 
