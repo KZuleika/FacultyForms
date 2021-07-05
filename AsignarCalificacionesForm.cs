@@ -63,7 +63,6 @@ namespace Faculty
                 materiaSeleccionada = dgvMaterias.SelectedRows[0].Cells["Materia"].Value.ToString();
                 matError = true;
             }
-            //tbAnteriorC.Text = nuevaC.ToString();
         }
 
         private void dgvMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -118,9 +117,6 @@ namespace Faculty
                         AsignarCalificacionesForm form = new AsignarCalificacionesForm(controlEscolar, matricula);
                         form.ShowDialog();
                         break;
-                    
-                    
-                        
                 }
 
             }

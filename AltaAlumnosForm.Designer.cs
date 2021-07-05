@@ -139,6 +139,7 @@ namespace Faculty
             this.tbMatricula.Size = new System.Drawing.Size(466, 27);
             this.tbMatricula.TabIndex = 1;
             this.tbMatricula.TextChanged += new System.EventHandler(this.tbMatricula_TextChanged);
+            this.tbMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbMatricula_KeyPress);
             // 
             // AltaAlumnosForm
             // 
