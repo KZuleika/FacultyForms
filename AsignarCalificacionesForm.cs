@@ -35,19 +35,14 @@ namespace Faculty
             cmbAlumnos.SelectedValue = alumnoSeleccionado;
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void AsignarCalificacionesForm_Load(object sender, EventArgs e)
         {
-            Close();
+            dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int)cmbAlumnos.SelectedValue);
         }
 
         private void cmbAlumnos_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int)cmbAlumnos.SelectedValue);
-        }
-
-        private void AsignarCalificacionesForm_Load(object sender, EventArgs e)
-        {
-            dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int) cmbAlumnos.SelectedValue);
         }
 
         private void dgvMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -115,6 +110,11 @@ namespace Faculty
                 }
 
             }
+        }
+        
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void dgvMaterias_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
