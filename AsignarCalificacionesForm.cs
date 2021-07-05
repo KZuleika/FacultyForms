@@ -6,11 +6,14 @@ namespace Faculty
     public partial class AsignarCalificacionesForm : Form
     {
         private ControlEscolar controlEscolar;
+
         private int claveMat;
         private int nuevaC;
+        private string materiaSeleccionada;
+
         private bool matActualizada = false;
         private bool matError = false;
-        private string materiaSeleccionada;
+        
         public AsignarCalificacionesForm(ControlEscolar controlEscolar)
         {
             InitializeComponent();
@@ -39,7 +42,6 @@ namespace Faculty
 
         private void cmbAlumnos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int matricula = (int) cmbAlumnos.SelectedValue;
             dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int)cmbAlumnos.SelectedValue);
         }
 
@@ -50,19 +52,21 @@ namespace Faculty
 
         private void dgvMaterias_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvMaterias.SelectedRows.Count > 0 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString())>-1 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) <= 100)
+            if (dgvMaterias.SelectedRows.Count > 0)
             {
                 claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
                 nuevaC = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString());
                 materiaSeleccionada = dgvMaterias.SelectedRows[0].Cells["Materia"].Value.ToString();
-                matActualizada = true;
-            } else if (dgvMaterias.SelectedRows.Count > 0 && (Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) <= -1 || Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) >100))
-            {
-                claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
-                nuevaC = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString());
-                materiaSeleccionada = dgvMaterias.SelectedRows[0].Cells["Materia"].Value.ToString();
-                matError = true;
+                if (Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) > -1 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) <= 100)
+                {
+                    matActualizada = true;
+                }
+                else if (Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) <= -1 || Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) > 100)
+                {
+                    matError = true;
+                }
             }
+
         }
 
         private void dgvMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -128,7 +132,6 @@ namespace Faculty
         {
             if (Char.IsDigit(e.KeyChar)) e.Handled = false;
             else if (Char.IsControl(e.KeyChar)) e.Handled = false;
-            else if (e.KeyChar == '-') e.Handled = false;
             else e.Handled = true;
         }
     }
