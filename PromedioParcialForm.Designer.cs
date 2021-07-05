@@ -98,10 +98,10 @@ namespace Faculty
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Franklin Gothic Demi", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(163, 27);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(87, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(501, 38);
+            this.label1.Size = new System.Drawing.Size(618, 44);
             this.label1.TabIndex = 6;
             this.label1.Text = "Promedio Asignaturas Aprobadas";
             // 

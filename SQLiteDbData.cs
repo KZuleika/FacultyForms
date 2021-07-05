@@ -253,7 +253,7 @@ namespace SQLiteDb
             List<Materia> extraordinarios = new List<Materia>();
             string sql = "SELECT m.materia AS materia, m.clave AS clave, COUNT(c.matricula) AS alumnos_reprobados"
                         + " FROM materias m"
-                        + " LEFT JOIN calificaciones c on m.clave = c.clave AND (c.calificacion<70 AND c.calificacion>-1)"
+                        + " LEFT OUTER JOIN calificaciones c on m.clave = c.clave AND (c.calificacion<70 AND c.calificacion>-1)"
                         + " GROUP BY  m.clave, m.materia"
                         + " ORDER BY m.materia; ";
 
