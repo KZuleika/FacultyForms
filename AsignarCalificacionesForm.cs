@@ -50,7 +50,7 @@ namespace Faculty
 
         private void dgvMaterias_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvMaterias.SelectedRows.Count > 0 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString())>-1 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) <= 100)
+            if (dgvMaterias.SelectedRows.Count > 0 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString())>-1 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) <= 100)
             {
                 claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
                 nuevaC = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString());
@@ -92,6 +92,7 @@ namespace Faculty
                         break;
                     default:
                     case DialogResult.No:
+                        dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno(matricula);
                         break;
                 }
                 
@@ -110,6 +111,7 @@ namespace Faculty
                 {
                     default:
                     case DialogResult.OK:
+                        dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno(matricula);
                         break;
                 }
 
@@ -126,7 +128,6 @@ namespace Faculty
         {
             if (Char.IsDigit(e.KeyChar)) e.Handled = false;
             else if (Char.IsControl(e.KeyChar)) e.Handled = false;
-            else if (Char.IsSeparator(e.KeyChar)) e.Handled = false;
             else if (e.KeyChar == '-') e.Handled = false;
             else e.Handled = true;
         }
