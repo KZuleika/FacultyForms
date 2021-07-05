@@ -87,7 +87,7 @@ namespace Faculty
                 switch (MessageBox.Show($"Calificación no permitida "
                                         + $"{cmbAlumnos.SelectedItem} "
                                         + $" en {materiaSeleccionada}"
-                                        + $" a {nuevaC}?",
+                                        + $" a {nuevaC}",
                                  "Error",
                                  MessageBoxButtons.OK,
                                  MessageBoxIcon.Error))
