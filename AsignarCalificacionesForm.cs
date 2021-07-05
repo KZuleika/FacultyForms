@@ -57,11 +57,12 @@ namespace Faculty
                 claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
                 nuevaC = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString());
                 materiaSeleccionada = dgvMaterias.SelectedRows[0].Cells["Materia"].Value.ToString();
-                if (Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) > -1 && Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) <= 100)
+                
+                if (nuevaC > -1 && nuevaC <= 100)
                 {
                     matActualizada = true;
                 }
-                else if (Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) <= -1 || Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString()) > 100)
+                else
                 {
                     matError = true;
                 }
