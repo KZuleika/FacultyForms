@@ -50,6 +50,12 @@ namespace Faculty
             dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int) cmbAlumnos.SelectedValue);
         }
 
+        private void dgvMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvMaterias.SelectedRows.Count > 0)
+                claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
+        }
+
         private void dgvMaterias_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvMaterias.SelectedRows.Count > 0)
@@ -62,12 +68,6 @@ namespace Faculty
                 else matError = true;
             }
 
-        }
-
-        private void dgvMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvMaterias.SelectedRows.Count > 0)
-                claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
         }
 
         private void dgvMaterias_SelectionChanged(object sender, EventArgs e)

@@ -23,8 +23,9 @@ namespace Faculty
         }
 
         public List<Alumno> GetAlumnos(bool alfabetico)
-        {   if(!alfabetico) return conn.GetAlumnos();
-            return conn.GetAlumnosAlf();
+        {   
+            if(!alfabetico) return conn.GetAlumnos(); //matricula
+            return conn.GetAlumnosAlf(); //alf-abetico
         }
 
         public List<Materia> GetMaterias()
