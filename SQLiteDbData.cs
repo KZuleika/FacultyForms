@@ -126,7 +126,6 @@ namespace SQLiteDb
 
             sql = "SELECT clave FROM materias ORDER BY clave; ";
             List<int> claves = new List<int>();
-
             using (SQLiteRecordSet rs = ExecuteQuery(sql))
             {
                 while (rs.NextRecord())
@@ -134,6 +133,7 @@ namespace SQLiteDb
                     claves.Add(rs.GetInt32("clave"));
                 }
             }
+
             claves.ForEach(c => {
                 sql = $"INSERT INTO calificaciones (matricula, clave, calificacion) VALUES ({matricula}, {c}, -1);";
                 ExecuteNonQuery(sql);

@@ -48,8 +48,8 @@ namespace Faculty
             else
             {
                 conn.AltaAlumno(matricula, apellido, nombre);
+                return true;
             }
-            return true;
         }
         public void AsignarCalificacion(int matricula, int clave, int calificacion)
         {

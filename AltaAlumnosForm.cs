@@ -19,10 +19,11 @@ namespace Faculty
             this.controlEscolar = controlEscolar;
         }
 
-        public AltaAlumnosForm(ControlEscolar controlEscolar, string nombre, string apellido)
+        public AltaAlumnosForm(ControlEscolar controlEscolar, int matricula, string nombre, string apellido)
         {
             InitializeComponent();
             this.controlEscolar = controlEscolar;
+            tbMatricula.Text = matricula.ToString();
             tbNombre.Text = nombre;
             tbApellido.Text = apellido;
         }
@@ -40,7 +41,7 @@ namespace Faculty
 
             if (tbMatricula.Text.Trim().Length > 0) matricula = Convert.ToInt32(tbMatricula.Text.Trim());
 
-            //revisa que los campos esten llenos
+            //revisa que los campos estan vacios
             if (tbMatricula.Text.Trim().Length < 1 || tbApellido.Text.Trim().Length < 1 || tbNombre.Text.Trim().Length < 1) {
                 switch (MessageBox.Show("Campo(s) vacio(s).\nRellene todos campos.",
                                  "Campo(s) vacio(s)",
@@ -49,7 +50,7 @@ namespace Faculty
                 {
                     case DialogResult.Retry:
                         Close();
-                        AltaAlumnosForm form = new AltaAlumnosForm(controlEscolar, nombre, apellido);
+                        AltaAlumnosForm form = new AltaAlumnosForm(controlEscolar, matricula, nombre, apellido);
                         form.ShowDialog();
                         break;
                     default:
@@ -69,7 +70,7 @@ namespace Faculty
                 {
                     case DialogResult.Retry:
                         Close();
-                        AltaAlumnosForm form = new AltaAlumnosForm(controlEscolar, nombre, apellido);
+                        AltaAlumnosForm form = new AltaAlumnosForm(controlEscolar, matricula, nombre, apellido);
                         form.ShowDialog();
                         //break;
                         return;
@@ -90,8 +91,6 @@ namespace Faculty
         {
             if (tbMatricula.Text.Trim().Length > 3) btnGuardar.Enabled = true;
             else btnGuardar.Enabled = false;
-
-
         }
 
         private void tbMatricula_KeyPress(object sender, KeyPressEventArgs e)
