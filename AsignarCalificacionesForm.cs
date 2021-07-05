@@ -58,14 +58,8 @@ namespace Faculty
                 nuevaC = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["NuevaC"].Value.ToString());
                 materiaSeleccionada = dgvMaterias.SelectedRows[0].Cells["Materia"].Value.ToString();
                 
-                if (nuevaC > -1 && nuevaC <= 100)
-                {
-                    matActualizada = true;
-                }
-                else
-                {
-                    matError = true;
-                }
+                if (nuevaC > -1 && nuevaC <= 100) matActualizada = true;
+                else matError = true;
             }
 
         }
@@ -74,12 +68,12 @@ namespace Faculty
         {
             if (dgvMaterias.SelectedRows.Count > 0)
                 claveMat = Convert.ToInt32(dgvMaterias.SelectedRows[0].Cells["Clave"].Value.ToString());
-            //tbAnteriorC.Text = claveMat.ToString();
         }
 
         private void dgvMaterias_SelectionChanged(object sender, EventArgs e)
         {
             int matricula = (int)cmbAlumnos.SelectedValue;
+            
             if(matActualizada)
             {
                 matActualizada = false;
