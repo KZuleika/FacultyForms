@@ -24,17 +24,6 @@ namespace Faculty
             cmbAlumnos.DataSource = controlEscolar.GetAlumnos(true);
             }
 
-        public AsignarCalificacionesForm(ControlEscolar controlEscolar, int alumnoSeleccionado)
-        {
-            InitializeComponent();
-            this.controlEscolar = controlEscolar;
-
-            cmbAlumnos.DisplayMember = "ToString()";
-            cmbAlumnos.ValueMember = "Matricula";
-            cmbAlumnos.DataSource = controlEscolar.GetAlumnos(true);
-            cmbAlumnos.SelectedValue = alumnoSeleccionado;
-        }
-
         private void AsignarCalificacionesForm_Load(object sender, EventArgs e)
         {
             dgvMaterias.DataSource = controlEscolar.MateriasActualizablesPorAlumno((int)cmbAlumnos.SelectedValue);
