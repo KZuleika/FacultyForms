@@ -91,6 +91,7 @@ namespace Faculty
             this.dgvMaterias.TabIndex = 13;
             this.dgvMaterias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterias_CellContentClick);
             this.dgvMaterias.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterias_CellValueChanged);
+            this.dgvMaterias.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvMaterias_EditingControlShowing);
             this.dgvMaterias.SelectionChanged += new System.EventHandler(this.dgvMaterias_SelectionChanged);
             // 
             // Clave

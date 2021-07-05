@@ -122,5 +122,19 @@ namespace Faculty
             }
         }
 
+        private void dgvMaterias_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            DataGridViewTextBoxEditingControl colCalif = (DataGridViewTextBoxEditingControl)e.Control;
+            colCalif.KeyPress -= new KeyPressEventHandler(colCalif_KeyPress);
+            colCalif.KeyPress += new KeyPressEventHandler(colCalif_KeyPress);
+        }
+        private void colCalif_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) e.Handled = false;
+            else if (Char.IsControl(e.KeyChar)) e.Handled = false;
+            else if (Char.IsSeparator(e.KeyChar)) e.Handled = false;
+            else if (e.KeyChar == '-') e.Handled = false;
+            else e.Handled = true;
+        }
     }
 }
