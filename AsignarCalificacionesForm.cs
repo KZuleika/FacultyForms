@@ -105,7 +105,7 @@ namespace Faculty
         {
             Close();
         }
-
+        
         private void dgvMaterias_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             DataGridViewTextBoxEditingControl colCalif = (DataGridViewTextBoxEditingControl)e.Control;

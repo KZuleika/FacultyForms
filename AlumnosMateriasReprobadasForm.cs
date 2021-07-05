@@ -18,7 +18,7 @@ namespace Faculty
             InitializeComponent();
             this.controlEscolar = controlEscolar;
 
-            cmbAlumnos.DisplayMember = "NombreCompletoMatricula";
+            cmbAlumnos.DisplayMember = "ToString()";
             cmbAlumnos.ValueMember = "Matricula";
             cmbAlumnos.DataSource = controlEscolar.GetAlumnosReprobados();
         }
